@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 100,
+    "Aika": "2017-04-11T17:47:30.9845866+03:00",
+    "Seurantanumero": "23445555",
+    "MaksuId": null,
+    "AsiakasEnimi": "Roope",
+    "AsiakasSnimi": "Hackerman",
+    "Osoite": "Hackerstreet 4 B 22",
+    "ToimitusOsoite": "Hackerstreet 4 B 22",
+    "AsiakasPuhelin": "+2223334445",
+    "AsiakasSposti": "hackerman@gmail.com",
+    "Toimitus": 0,
+    "Maksutapa": 1,
+    "Tuotteet": null,
+    "OstoHinta": 465.0,
+    "Verot": 111.6,
+    "Toimitusmaksu": 8.0,
+    "Yhteensa": 584.6,
+    "AsiakasNimi": "Roope Hackerman",
+    "ShortDate": "11.04.2017"
+  }
+]

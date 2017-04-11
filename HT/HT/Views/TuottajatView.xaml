@@ -39,10 +39,15 @@
                                         <TextBlock Text="{Binding Nimi}" FontSize="16" FontWeight="Bold"/>
                                         <TextBlock Text="{Binding Osoite}" FontSize="16"/>
                                         <TextBlock Text="{Binding Puhelin}" FontSize="16"/>
-                                        <Button Content="Muokkaa" Click="Muokkaa_Click" Command="{Binding ElementName=tuottajaListview, Path=DataContext.SelectTuottajaCommand}" CommandParameter="{Binding}"/>
-                                        <Button Content="Poista" Command="{Binding ElementName=tuottajaListview, Path=DataContext.RemoveTuottajaCommand}" CommandParameter="{Binding}"/>
+                                        
                                     </StackPanel>
+                                    
                                 </DockPanel>
+                                <StackPanel Grid.Column="0" Grid.Row="1"  Orientation="Horizontal">
+                                    <Button Content="Muokkaa" Click="Muokkaa_Click" Command="{Binding ElementName=tuottajaListview, Path=DataContext.SelectTuottajaCommand}" CommandParameter="{Binding}"/>
+                                    <Button Content="Poista" Command="{Binding ElementName=tuottajaListview, Path=DataContext.RemoveTuottajaCommand}" CommandParameter="{Binding}"/>
+
+                                </StackPanel>
                             </Grid>
                         </Border>
                     </DataTemplate>

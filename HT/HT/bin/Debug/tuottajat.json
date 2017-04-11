@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 1,
+    "Nimi": "Razer",
+    "Osoite": "Wall Street 12 , NY, USA",
+    "Sposti": "razer.com",
+    "Puhelin": "+23232323232"
+  },
+  {
+    "Id": 2,
+    "Nimi": "SteelSeries",
+    "Osoite": "Black Street 22, Los-Angeles, USA",
+    "Sposti": "steelseries.com",
+    "Puhelin": "+12121122121"
+  },
+  {
+    "Id": 3,
+    "Nimi": "Logitech",
+    "Osoite": "Baker Street 48, London, Britain",
+    "Sposti": "logitech.com",
+    "Puhelin": "+55555555555"
+  }
+]
