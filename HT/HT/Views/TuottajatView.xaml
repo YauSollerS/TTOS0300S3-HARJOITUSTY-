@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="HT.Views.TuottajatView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HT.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="700">
+    <Grid Background="#EBF4FA">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="4">
+            <TextBlock Text="TUOTTAJAT" FontSize="26" HorizontalAlignment="Center" DockPanel.Dock="Top"/>
+            <ListView x:Name="tuottajaListview" ItemsSource="{Binding Tuottajat}"  SelectedItem="{Binding ViewedTuottaja, Mode=TwoWay}" Margin="5">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="2" BorderThickness="0,0,0,1" BorderBrush="Black">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <DockPanel Grid.Row="0" Grid.Column="0">
+                                    <StackPanel Margin="5">
+                                        <TextBlock Text="{Binding Nimi}" FontSize="16" FontWeight="Bold"/>
+                                        <TextBlock Text="{Binding Osoite}" FontSize="16"/>
+                                        <TextBlock Text="{Binding Puhelin}" FontSize="16"/>
+                                        <Button Content="Muokkaa" Click="Muokkaa_Click" Command="{Binding ElementName=tuottajaListview, Path=DataContext.SelectTuottajaCommand}" CommandParameter="{Binding}"/>
+                                        <Button Content="Poista" Command="{Binding ElementName=tuottajaListview, Path=DataContext.RemoveTuottajaCommand}" CommandParameter="{Binding}"/>
+                                    </StackPanel>
+                                </DockPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </DockPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="5,36,5,5">
+            <TextBlock Text="Yrityksen Nimi" FontSize="20" Margin="5"/>
+            <TextBlock Text="{Binding ViewedTuottaja.Nimi}" FontSize="16"/>
+            <TextBlock Text="Puhelin Numero" FontSize="20" Margin="5"/>
+            <TextBlock Text="{Binding ViewedTuottaja.Puhelin}" FontSize="16"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Margin="5,36,5,5">
+            <TextBlock Text="Osoite" FontSize="20" Margin="5"/>
+            <TextBlock Text="{Binding ViewedTuottaja.Osoite}" FontSize="16"/>
+            <TextBlock Text="Sähköposti" FontSize="20" Margin="5"/>
+            <TextBlock Text="{Binding ViewedTuottaja.Sposti}" FontSize="16"/>
+        </StackPanel>
+
+        <DockPanel Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="4">
+            <StackPanel DockPanel.Dock="Left" Margin="10" MinWidth="125">
+                <TextBlock Text="Yrityksen Nimi"/>
+                <TextBox Text="{Binding TuottajaModel.Nimi, Mode=TwoWay}" FontSize="16"/>
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top">
+                        <TextBlock Text="Puhelin Numero"/>
+                        <TextBox FontSize="16" Text="{Binding TuottajaModel.Puhelin, Mode=TwoWay}"/>
+                    </StackPanel>
+                    <StackPanel DockPanel.Dock="Bottom">
+                        <StackPanel x:Name="lisaaPanel" Margin="5">
+                            <Button Content="Lisää" Command="{Binding AddTuottajaCommand}"/>
+                        </StackPanel>
+                        <StackPanel x:Name="muokkaaPanel" Visibility="Collapsed" Margin="5">
+                            <Button Content="Päivittää" Click="Paivittaa_Click" Command="{Binding UpdateTuottajaCommand}" />
+                            <Button Content="Lopeta" Click="Lopeta_Click" Command="{Binding ClearTuottajaCommand}" />
+                        </StackPanel>
+                        
+                    </StackPanel>
+                    
+                    
+                </DockPanel>
+            </StackPanel>
+            <DockPanel Margin="10">
+                <StackPanel DockPanel.Dock="Top">
+                    <TextBlock Text="Osoite" />
+                    <TextBox FontSize="16" Text="{Binding TuottajaModel.Osoite, Mode=TwoWay}" />
+                    <TextBlock Text="Sähköpostiosoite"/>
+                    <TextBox FontSize="16" Text="{Binding TuottajaModel.Sposti, Mode=TwoWay}" />
+                </StackPanel>
+            </DockPanel>
+        </DockPanel>
+
+
+    </Grid>
+</UserControl>

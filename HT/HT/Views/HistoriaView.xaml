@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="HT.Views.HistoriaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HT.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="700">
+    <Grid Background="#EBF4FA">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="4">
+            <TextBlock Text="HISTORIA" FontSize="26" HorizontalAlignment="Center" DockPanel.Dock="Top"/>
+            <ListView ItemsSource="{Binding Liiketoimet}" SelectionChanged="Liiketoimi_Selected" Margin="5">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="2" BorderThickness="0,0,0,1" BorderBrush="Black">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <DockPanel Grid.Row="0" Grid.Column="0">
+                                    <TextBlock Width="50" Text="{Binding Id}"/>
+                                    <StackPanel Margin="5">
+                                        <TextBlock Text="{Binding AsiakasNimi}" FontSize="16" FontWeight="Bold"/>
+                                        <TextBlock Text="{Binding ShortDate}" FontSize="16"/>
+                                        <TextBlock Text="{Binding Yhteensa, StringFormat=€{0}}" FontSize="16"/>
+                                    </StackPanel>
+                                </DockPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </DockPanel>
+
+        <DockPanel Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="4">
+            <Grid Margin="0,33,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Margin="5">
+                    <TextBlock Text="Liiketoimi ID" FontSize="14"/>
+                    <TextBox x:Name="liiketoimiIdBox" Text="{Binding SelectedLiiketoimi.Id}" IsReadOnly="True" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+                    <TextBlock Text="Ostopäivä" FontSize="14"/>
+                    <TextBox x:Name="paivaBox" Text="{Binding SelectedLiiketoimi.ShortDate}" IsReadOnly="True" />
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+                    <TextBlock Text="Maksutapa" FontSize="14"/>
+                    <TextBox x:Name="maksutapaBox" Text="{Binding SelectedLiiketoimi.Maksutapa}" IsReadOnly="True"  />
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+                    <TextBlock Text="Nimi" FontSize="14"/>
+                    <TextBox x:Name="nimiBox" Text="{Binding SelectedLiiketoimi.AsiakasNimi}" IsReadOnly="True"  />
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="5">
+                    <TextBlock Text="Sähköposti" FontSize="14"/>
+                    <TextBox Text="{Binding SelectedLiiketoimi.AsiakasSposti}" IsReadOnly="True" />
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+                    <TextBlock Text="Puhelin Numero" FontSize="14"/>
+                    <TextBox x:Name="puhelinBox" Text="{Binding SelectedLiiketoimi.AsiakasPuhelin}" IsReadOnly="True" />
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Margin="5">
+                    <TextBlock Text="Laskutusosoite" FontSize="14"/>
+                    <TextBox x:Name="laskutusosoiteBox" Text="{Binding SelectedLiiketoimi.Osoite}" IsReadOnly="True" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Margin="5">
+                    <TextBlock Text="Toimitusosoite" FontSize="14"/>
+                    <TextBox x:Name="toimitusosoiteBox" Text="{Binding SelectedLiiketoimi.ToimitusOsoite}" IsReadOnly="True" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="5">
+                    <TextBlock Text="Toimitustapa" FontSize="14"/>
+                    <TextBox x:Name="toimitustapaBox" Text="{Binding SelectedLiiketoimi.Toimitus}" IsReadOnly="True" />
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="5">
+                    <TextBlock Text="Seurantanumero" FontSize="14"/>
+                    <TextBox x:Name="seurantanumeroBox" Text="{Binding SelectedLiiketoimi.Seurantanumero}" IsReadOnly="True" />
+                </StackPanel>
+            </Grid>
+        </DockPanel>
+
+    </Grid>
+</UserControl>
