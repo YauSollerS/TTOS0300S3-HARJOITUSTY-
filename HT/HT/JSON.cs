@@ -7,6 +7,7 @@ using System.IO;
 
 namespace HT
 {
+    //Koodi, joka ohjaa JSONia
     public class JSON
     {
         public static void WriteToJsonFile<T>(string filePath, T objectToWrite) where T : new()

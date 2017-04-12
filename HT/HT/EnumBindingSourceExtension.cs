@@ -7,6 +7,7 @@ using System.Windows.Markup;
 
 namespace HT
 {
+    //A Better Way to Data Bind Enums in WPF
     public class EnumBindingSourceExtension : MarkupExtension
     {
         private Type _enumType;

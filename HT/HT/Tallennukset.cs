@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace HT
 {
+    //Enumeja 
     public enum Tuotetyypit
     {
         Hiiret,
@@ -30,6 +31,7 @@ namespace HT
         PayPal
     }
 
+    //Sisältää metodeja, jotka tallentaa tiedot tiedostoihin ja tuo/lukee tiedot tiedostoista
     public static class Tallennukset
     {
         public static void SaveUusiTuoteList(ObservableCollection<Tuote> tuotteet)

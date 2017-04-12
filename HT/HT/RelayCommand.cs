@@ -7,6 +7,7 @@ using System.Windows.Input;
 
 namespace HT
 {
+    //ReplayCommand toteuttaa ICommand rajapinnan.Sen tapaukset ovat komento kohteita, joiden kautta näkymä voi kutsua metodeja.
     public class RelayCommand : ICommand
     {
         private Action<object> execute;
