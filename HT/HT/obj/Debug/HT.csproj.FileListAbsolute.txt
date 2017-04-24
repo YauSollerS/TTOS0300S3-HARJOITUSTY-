@@ -62,3 +62,6 @@ C:\Users\K8792\Source\Repos\TTOS0300S3-HARJOITUSTYO\HT\HT\obj\Debug\Views\Tuotte
 C:\Users\K8792\Source\Repos\TTOS0300S3-HARJOITUSTYO\HT\HT\obj\Debug\HT.g.resources
 C:\Users\K8792\Source\Repos\TTOS0300S3-HARJOITUSTYO\HT\HT\obj\Debug\HT.Properties.Resources.resources
 C:\Users\K8792\Source\Repos\TTOS0300S3-HARJOITUSTYO\HT\HT\obj\Debug\HT.csproj.GenerateResource.Cache
+D:\K8792\Repos\HT\HT\bin\Debug\HT.exe.config
+D:\K8792\Repos\HT\HT\obj\Debug\HT.exe
+D:\K8792\Repos\HT\HT\obj\Debug\HT.pdb
